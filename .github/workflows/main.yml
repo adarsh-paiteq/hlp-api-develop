@@ -46,8 +46,7 @@ jobs:
 
           echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
 
-          docker pull ghcr.io/${GITHUB_REPOSITORY}:develop || true
-
-          docker build --tag ghcr.io/${GITHUB_REPOSITORY}:develop .
+         
+           docker build --tag ghcr.io/${GITHUB_REPOSITORY}:develop .
 
           docker push ghcr.io/${GITHUB_REPOSITORY}:develop
