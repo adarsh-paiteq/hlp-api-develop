@@ -1,0 +1,38 @@
+export const claimRewardMockData = {
+  challenge: {
+    is_challenge_completed: false,
+    challenge_end_date: '2022-08-31',
+    challenge_start_date: '2022-08-08',
+    hlp_reward_points_required_for_completing_goal: 100,
+    hlp_reward_points_required_for_winning_challenge: 150,
+    hlp_reward_points_to_be_awarded_for_completing_goal: 15,
+    hlp_reward_points_to_be_awarded_for_winning_challenge: 20,
+    total_days: 23,
+    description:
+      '<p>Tiny Habits text: data into an easy-to-use assessment leading to the right medical treatment and on-going support. Your mental health is our priority and we understand that every situation can be complex and challenging.</p>\n\n<p><br />\nTip text: That is why we have designed a program which inlcudes your genetic, metablic, demographic and cliniical information.</p>\n\n<p>That is why we have designed a program which inlcudes your genetic.</p>\n',
+    emoji: '🏆',
+    file_path: 'images/L3jSQztkHop321ApliDsVjiUmqYRbKqLUPVB.png',
+    image_id: 'L3jSQztkHop321ApliDsVjiUmqYRbKqLUPVB',
+    image_url:
+      'https://ik.imagekit.io/clezr42lwnk/hlp/images/L3jSQztkHop321ApliDsVjiUmqYRbKqLUPVB.png',
+    label: 'Challenge',
+    short_description: 'Running for 14 days',
+    title: 'Stress Challenge',
+    created_at: '2022-08-08T05:47:23.708892+00:00',
+    updated_at: '2022-08-08T05:47:34.449054+00:00',
+    id: 'c3b186f8-c387-4ddd-a69d-e2d43a216427',
+    tool_kit_id: '8f91807b-c9f8-432a-a897-ec968383d5cc',
+  },
+  membership_level: {
+    hlp_reward_points: 10,
+    hlp_reward_points_to_complete_this_level: 100,
+    sequence_number: 1,
+    title: 'Level 1',
+    created_at: '2022-06-22T05:16:51.162027+00:00',
+    updated_at: '2022-06-22T05:17:11.460271+00:00',
+    id: '1a139578-d538-4c06-8b72-1b7c8ff8e82a',
+  },
+  targetName: 'Weekly Target',
+  totalTarget: 6,
+  completed: 2,
+};

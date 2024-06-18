@@ -1,0 +1,21 @@
+FROM node:18.17.1
+
+RUN apt-get update && apt-get install -y apt-transport-https ca-certificates curl gnupg ffmpeg && \
+    curl -sLf --retry 3 --tlsv1.2 --proto "=https" 'https://packages.doppler.com/public/cli/gpg.DE2A7741A397C129.key' | apt-key add - && \
+    echo "deb https://packages.doppler.com/public/cli/deb/debian any-version main" | tee /etc/apt/sources.list.d/doppler-cli.list && \
+    apt-get update && \
+    apt-get -y install doppler
+
+RUN useradd --user-group --create-home --shell /bin/false hlp
+
+ENV HOME=/home/hlp
+
+COPY package.json package-lock.json  ${HOME}/api/
+RUN chown -R hlp:hlp $HOME/*
+
+USER hlp
+WORKDIR $HOME/api
+RUN npm install
+
+ENTRYPOINT ["doppler", "run", "--"]
+CMD npm run start:dev

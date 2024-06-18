@@ -1,0 +1,194 @@
+{
+  "users": {
+    "password_updated": "Wachtwoord bijgewerkt",
+    "Pin_updated": "PIN bijgewerkt",
+    "email_verified": "Je e-mailadres is succesvol geverifieerd.",
+    "email_sent": "E-mail verzonden",
+    "app_enabled": "Deze pincode is geactiveerd.",
+    "failed_email_sent": "Kan e-mail niet verzenden",
+    "already_purchase_reminder_tone": "Je hebt deze herinneringstoon al gekocht",
+    "reminder_tone_purchased_successfully": "Herinneringstoon succesvol gekocht",
+    "tool_kit_not_linked": "Deze toolkit is niet gekoppeld aan uitdagingen",
+    "success": "succes",
+    "followed_friend": "Vriend gevolgd",
+    "friend_request_sent": "Vriendverzoek succesvol verzonden",
+    "status_updated": "Status van vriendverzoek succesvol bijgewerkt",
+    "friend_request_removed_successfully": "Vriendverzoek succesvol verwijderd",
+    "remove_friend": "Vriend succesvol verwijderd",
+    "account_deleted_successfully": "Account succesvol verwijderd",
+    "otp_send_successfully": "OTP succesvol verzonden",
+    "user_password_updated": "Gebruikerswachtwoord succesvol bijgewerkt",
+    "username_updated": "Schermnaam is succesvol bijgewerkt",
+    "user_updated_successfully": "Gebruiker succesvol bijgewerkt"
+  },
+  "challenges": {
+    "complete_challenge": "Uitdaging voltooid"
+  },
+  "bonuses": {
+    "checkin_bonus_claimed": "Alle incheckbonussen zijn geclaimd",
+    "not_satisfied_user_membership_stage": "Gebruikerslidmaatschapsniveau niet voldaan",
+    "claim_tool_kits_bonus": "Alle toolkit-bonussen zijn geclaimd",
+    "claim_trophy_bonus": "Alle trofee-bonussen zijn geclaimd",
+    "trophies_not_satisfied": "Aantal trofeeën voldoet niet aan huidige",
+    "new_bonus": "Nieuwe bonus",
+    "be_claimed": "te claimen",
+    "required": "vereist"
+  },
+  "doctors": {
+    "register_password": "Wachtwoord succesvol geregistreerd",
+    "Pin_updated": "PIN succesvol bijgewerkt",
+    "password_updated": "Wachtwoord succesvol bijgewerkt",
+    "set_screen_name": "Schermnaam succesvol toegevoegd",
+    "set_profile_picture": "Profielfoto succesvol toegevoegd",
+    "lock_enabled": "App-vergrendeling ingeschakeld",
+    "otp_send_successfully": "OTP succesvol verzonden",
+    "pin_change": "PIN succesvol gewijzigd",
+    "logout_doctor": "Dokter succesvol uitgelogd",
+    "doctor_profile_updated": "Je profielgegevens zijn succesvol bijgewerkt.",
+    "doctor_status_changed": "Dokterstatus succesvol gewijzigd",
+    "sent_support_question": "Dit bericht is succesvol verzonden naar onze support afdeling."
+  },
+  "checkins": {
+    "no_checkin_levels": "Geen incheckniveaus",
+    "all_checkin_levels_completed": "Alle incheckniveaus zijn voltooid",
+    "no_checkin_enough_ponts_complete": "Niet genoeg punten om incheckniveau te voltooien",
+    "required": "vereist:",
+    "current": ",huidig",
+    "no_schedule_disabled": ",Geen schema's uitgeschakeld",
+    "disabled_schedules": "uitgeschakelde schema's",
+    "reached": "bereikt"
+  },
+  "channels": {
+    "total_followers": "totaal aantal volgers is",
+    "channel_unfollowed": "Kanaal ontvolgd",
+    "channel_followed": "Kanaal gevolgd",
+    "user_channel_post_not_found": "Gebruikerskanaalbericht niet gevonden",
+    "channel_post_updated": "Kanaalbericht bijgewerkt",
+    "channel_post_added": "Kanaalbericht toegevoegd",
+    "post_reaction_reward_added": "Beloning toegevoegd voor berichtreactie",
+    "post_reaction_reward_already_added": "Beloning is al toegevoegd voor berichtreactie",
+    "last_channel_post_not_found": "Laatste kanaalbericht niet gevonden",
+    "user_channel_feed_updated": "Gebruikerskanaalfeeds bijgewerkt",
+    "channel_no_post": "Geen berichten in dit kanaal",
+    "user_feed_post_exist": "Bericht bestaat al in gebruikersfeed",
+    "last_post_date": "laatste berichtdatum",
+    "user_channel_feed_already_added": "Gebruikerskanaalfeed is al toegevoegd",
+    "successfully_updated": "Succesvol bijgewerkt",
+    "total_count": "Totaal aantal:",
+    "data_for_reaction_type": "Gegevens voor reactietype:",
+    "not_found": "niet gevonden",
+    "of": "van",
+    "count_to": "tellen naar",
+    "table_not_found": "tabel niet gevonden",
+    "successfully_hide_user_channel_feeds": "Gebruikerskanaalfeeds succesvol verborgen",
+    "failed_hide_user_channel_feeds": "Kan gebruikerskanaalfeeds niet verbergen",
+    "viewed": "Bekeken [",
+    "channel_posts": "] kanaalberichten",
+    "failed_user_channel_feed": "Kan gebruikerskanaalfeed niet bijwerken",
+    "already_viewed_channel_post": "Kanaalbericht is al bekeken",
+    "user_channel_feed_not_found": "Geen gebruikerskanaalfeed gevonden",
+    "user_channel_feed_added": "Gebruikerskanaalfeed toegevoegd voor",
+    "users": "gebruikers"
+  },
+  "goals": {
+    "level_unlocked": "Niveau ontgrendeld",
+    "no_goal_level_unlocked": "Geen doelniveau ontgrendeld"
+  },
+  "organisation": {
+    "none_of_the_above": "Geen van bovenstaande"
+  },
+  "service-offer-purchases": {
+    "success": "succes"
+  },
+  "toolkits": {
+    "user_toolkit_answer_saved": "Antwoord van gebruiker op toolkit opgeslagen",
+    "user_appointment_answer_saved": "Antwoord van gebruikersafspraak opgeslagen",
+    "toolkit_answer_saved": "Toolkit antwoord opgeslagen"
+  },
+  "schedule-sessions": {
+    "already_exists": "bestaat al",
+    "schedule_not_found": "schema niet gevonden"
+  },
+  "gamifications": {
+    "updated": "bijgewerkt"
+  },
+  "rewards": {
+    "reward_added_successfully": "Beloning succesvol toegevoegd"
+  },
+  "purchased-reminder-tones": {
+    "reminder_tone_purchased_successfully": "Herinneringstoon succesvol gekocht"
+  },
+  "forms": {
+    "rows_affected": "rijen beïnvloed"
+  },
+  "robots": {
+    "deleted": "verwijderd",
+    "treatment_timeline_status_updated": "Robottijdlijnstatus succesvol bijgewerkt"
+  },
+  "schedules": {
+    "schedule_created": "Schema aangemaakt",
+    "schedule_updated": "Schema bijgewerkt",
+    "success": "succes"
+  },
+  "vouchers": {
+    "successfully_redeemed": "Succesvol ingewisseld"
+  },
+  "invitations": {
+    "invitation_sent": "Uitnodiging succesvol verzonden",
+    "status_updated": "Status van groepsuitnodiging succesvol bijgewerkt"
+  },
+  "groups": {
+    "group_created": "Groep succesvol aangemaakt",
+    "group_updated": "Groep succesvol bijgewerkt",
+    "group_deleted": "Groep succesvol verwijderd",
+    "doctor_group_owner_created": "Eigenaar van doktersgroep succesvol aangemaakt",
+    "tool_deleted_from_group_successfully": "Tool succesvol verwijderd uit groep",
+    "invitation_sent": "Groepsuitnodiging succesvol verzonden",
+    "owner_removed_successfully": "Eigenaar succesvol verwijderd",
+    "group_leaved_successfully": "Groep succesvol verlaten",
+    "user_removed_successfully": "Gebruiker succesvol verwijderd",
+    "add_group_member": "Patiënt toegevoegd aan de groep"
+  },
+  "treatments": {
+    "treatment_buddy_is_added_successfully": "Buddy is succesvol toegevoegd aan het team.",
+    "treatment_buddy_deleted_successfully": "Behandelingsbuddy succesvol verwijderd",
+    "doctor_treatment_removed": "De behandelaar is van de behandeling verwijderd",
+    "doctor_treatment_created": "Behandeling van dokter succesvol aangemaakt",
+    "role_changed_successfully": "De rol van de behandelaar is succesvol gewijzigd.",
+    "update_treatment_complaints": "Klachten van behandeling bijgewerkt",
+    "treatment_archived": "Behandeling succesvol gearchiveerd",
+    "treatment_unarchived": "Behandeling succesvol uitgepakt",
+    "update_treatment_user_profile": "Profiel is bijgewerkt"
+  },
+  "chat_users": {
+    "chat_users_archived": "Gebruikerschat gearchiveerd",
+    "chat_users_unarchived": "Gebruikerschat niet gearchiveerd",
+    "chat_user_deleted": "Gebruikerschat succesvol verwijderd"
+  },
+  "treatment-timeline": {
+    "stage_added_successfully": "Fase succesvol toegevoegd",
+    "stage_updated_successfully": "Fase succesvol bijgewerkt",
+    "treatment_file_added_successfully": "Bestand succesvol toegevoegd",
+    "treatment_note_added_successfully": "Notitie succesvol toegevoegd",
+    "treatment_timeline_note_updated": "Notitie is bijgewerkt",
+    "treatment_timeline_file_updated": "Bestand is bijgewerkt",
+    "treatment_timeline_message_deleted": "Behandelingstijdlijnbericht succesvol verwijderd"
+  },
+
+  "membership_stage": {
+    "hlp": "Munten",
+    "thanks_recived": "Bedankjes ontvangen",
+    "months_member": "Maanden lid"
+  },
+  "membership_level": {
+    "hlp": "Munten"
+  },
+  "oauth_user": {
+    "activation_code_send_successfully": "Activatiecode succesvol verzonden",
+    "user_added_sucessfully": "De patiënt is succesvol toegevoegd"
+  },
+  "psyq": {
+    "appointments_not_available": "Afspraken niet beschikbaar",
+    "appointments_synced_successfully": "Afspraken succesvol toegevoegd"
+  }
+}

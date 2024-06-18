@@ -1,0 +1,197 @@
+{
+  "users": {
+    "password_updated": "Password updated",
+    "Pin_updated": "PIN updated",
+    "email_verified": "Your e-mail address has been confirmed succesfully.",
+    "email_sent": "Email Sent",
+    "app_enabled": "This PIN code is activated.",
+    "failed_email_sent": "Failed to send email",
+    "already_purchase_reminder_tone": "You have already purchased this reminder tone",
+    "reminder_tone_purchased_successfully": "Reminder tone purchased successfully",
+    "tool_kit_not_linked": "This tool kit is not linked with any challenges",
+    "success": "success",
+    "followed_friend": "Friend is Followed",
+    "friend_request_sent": "Friend Request Sent Successfully",
+    "status_updated": "Friend Request Status Updated Successfully",
+    "friend_request_removed_successfully": "Friend request removed successfully",
+    "remove_friend": "Remove Friend Successfully",
+    "account_deleted_successfully": "Account deleted successfully",
+    "otp_send_successfully": "OTP send successfully",
+    "user_password_updated": "User Password updated successfully",
+    "username_updated": "Screen Name updated successfully",
+    "user_updated_successfully": "User updated successfully"
+  },
+  "challenges": {
+    "complete_challenge": "Challenge Completed"
+  },
+  "bonuses": {
+    "checkin_bonus_claimed": "All checkin bonuses are claimed",
+    "not_satisfied_user_membership_stage": "User membership stage not satisfied",
+    "claim_tool_kits_bonus": "All toolkit bonuses are claimed",
+    "claim_trophy_bonus": "All trophy bonuses are claimed",
+    "trophies_not_satisfied": "Number of trophies not satisfied current",
+    "new_bonus": "New Bonus",
+    "be_claimed": "to be claimed",
+    "required": "required"
+  },
+  "doctors": {
+    "register_password": "Password registered successfully",
+    "Pin_updated": "Pin updated Successfully",
+    "password_updated": "Password updated Successfully",
+    "set_screen_name": "Screen Name added successfully",
+    "set_profile_picture": "Profile Photo added successfully",
+    "lock_enabled": "App lock enabled",
+    "otp_send_successfully": "OTP send successfully",
+    "pin_change": "Pin changed successfully",
+    "logout_doctor": "Doctor Logout Successfully",
+    "doctor_profile_updated": "Your profile information has been successfully updated.",
+    "doctor_status_changed": "Doctor Status Changed Successfully",
+    "sent_support_question": "This message has been successfully sent to our support department."
+  },
+  "checkins": {
+    "no_checkin_levels": "No checkin levels",
+    "all_checkin_levels_completed": "All check in levels are completed",
+    "no_checkin_enough_ponts_complete": "No enough points to commplete checkin level",
+    "required": "required:",
+    "current": ",current",
+    "no_schedule_disabled": ",No schedules disabled",
+    "disabled_schedules": "disabled schedules",
+    "reached": "reached"
+  },
+  "channels": {
+    "total_followers": "total followers are",
+    "channel_unfollowed": "Channel Unfollowed",
+    "channel_followed": "Channel Followed",
+    "user_channel_post_not_found": "User Channel Post Not Found",
+    "channel_post_updated": "Channel Post Updated",
+    "channel_post_added": "Channel Post Added",
+    "post_reaction_reward_added": "Post Reaction reward Added",
+    "post_reaction_reward_already_added": "Reward already added for Post Reaction",
+    "last_channel_post_not_found": "last Channel post not found",
+    "user_channel_feed_updated": "user channel feeds updated",
+    "channel_no_post": "No posts in this channel",
+    "user_feed_post_exist": "Post already exists user feed",
+    "last_post_date": "last post date",
+    "user_channel_feed_already_added": "user channel feed already added",
+    "successfully_updated": "Successfully Updated",
+    "total_count": "Count. Total Count =",
+    "data_for_reaction_type": "Data for Reaction Type:",
+    "not_found": "not found",
+    "of": "of",
+    "count_to": "count to",
+    "table_not_found": "table not found",
+    "successfully_hide_user_channel_feeds": "successfully hide user channel feeds",
+    "failed_hide_user_channel_feeds": "failed to hide user channel feeds",
+    "viewed": "Viewd [",
+    "channel_posts": "] channel posts",
+    "failed_user_channel_feed": "failed to update user channel feed",
+    "already_viewed_channel_post": "Channel post already viewed",
+    "user_channel_feed_not_found": "No user channel feed found",
+    "user_channel_feed_added": "user channel feed added for",
+    "users": "users"
+  },
+  "goals": {
+    "level_unlocked": "Level Unlocked",
+    "no_goal_level_unlocked": "No Goal level Unlocked"
+  },
+
+  "organisation": {
+    "none_of_the_above": "None of the above"
+  },
+  "service-offer-purchases": {
+    "success": "success"
+  },
+  "toolkits": {
+    "user_toolkit_answer_saved": "User Toolkit answer saved",
+    "user_appointment_answer_saved": "User Appointment answer saved",
+    "toolkit_answer_saved": "Toolkit answer saved"
+  },
+
+  "schedule-sessions": {
+    "already_exists": "already exists",
+    "schedule_not_found": "schedule not found"
+  },
+  "gamifications": {
+    "updated": "Updated"
+  },
+  "rewards": {
+    "reward_added_successfully": "Reward Added Successfully"
+  },
+  "purchased-reminder-tones": {
+    "reminder_tone_purchased_successfully": "Reminder tone purchased successfully"
+  },
+  "forms": {
+    "rows_affected": "rows affected"
+  },
+  "robots": {
+    "deleted": "deleted",
+    "treatment_timeline_status_updated": "Robot Timeline Status Updated Successfully"
+  },
+  "schedules": {
+    "schedule_created": "Schedule Created",
+    "schedule_updated": "Schedule Updated",
+    "success": "success"
+  },
+  "vouchers": {
+    "successfully_redeemed": "Successfully Redeemed"
+  },
+  "invitations": {
+    "invitation_sent": "Invitation Sent Successfully",
+    "status_updated": "Group Invitation status Updated Successfully"
+  },
+  "groups": {
+    "group_created": "Group Created Successfully",
+    "group_updated": "Group Updated Successfully",
+    "group_deleted": "Group Deleted Successfully",
+    "doctor_group_owner_created": "Doctor Group Owner Created Successfully",
+    "tool_deleted_from_group_successfully": "Tool deleted from group successfully",
+    "invitation_sent": "Group Invitation Sent Successfully",
+    "owner_removed_successfully": "Owner removed successfully",
+    "group_leaved_successfully": "Group leaved successfully",
+    "user_removed_successfully": "User removed successfully",
+    "add_group_member": "Patient Added to the group"
+  },
+  "treatments": {
+    "treatment_buddy_is_added_successfully": "Buddy was successfully added to the team.",
+    "treatment_buddy_deleted_successfully": "Treatment buddy deleted successfully",
+    "doctor_treatment_removed": "The Doctor has been removed from the treatment.",
+    "doctor_treatment_created": "Doctor Treatment Created Successfully",
+    "role_changed_successfully": "The role of the coach has successfully changed.",
+    "update_treatment_complaints": "Update Treatment Complaints",
+    "treatment_archived": "Treatment archived successfully",
+    "treatment_unarchived": "Treatment unarchived successfully",
+    "update_treatment_user_profile": "Profile has been updated."
+  },
+
+  "chat_users": {
+    "chat_users_archived": "Archived User Chat",
+    "chat_users_unarchived": "UnArchived User Chat",
+    "chat_user_deleted": "User Chat Deleted Successfully"
+  },
+  "treatment-timeline": {
+    "stage_added_successfully": "Stage Added Successfully",
+    "stage_updated_successfully": "Stage Updated Successfully",
+    "treatment_file_added_successfully": "File successfully added",
+    "treatment_note_added_successfully": "Note successfully added",
+    "treatment_timeline_note_updated": "Note has been updated",
+    "treatment_timeline_file_updated": "File has been updated",
+    "treatment_timeline_message_deleted": "Treatment Timeline Message Deleted Successfully"
+  },
+
+  "membership_stage": {
+    "hlp": "coins",
+    "thanks_recived": "Thanks received",
+    "months_member": "Months member"
+  },
+  "membership_level": {
+    "hlp": "coins"
+  },
+  "oauth_user": {
+    "activation_code_send_successfully": "Activation code send successfully",
+    "user_added_sucessfully": "The patient has been added successfully"
+  },
+  "psyq": {
+    "appointments_not_available": "Appointments not available",
+    "appointments_synced_successfully": "Appointments added successfully"
+  }
+}

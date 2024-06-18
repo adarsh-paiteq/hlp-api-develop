@@ -1,0 +1,6 @@
+export enum RobotBodyPlaceholder {
+  CHECK_IN_TITLE = 'CHECK_IN_TITLE',
+  TOOL_KIT_NAME = 'TOOL_KIT_NAME',
+  GOAL_TITLE = 'GOAL_TITLE',
+  DOCTOR_NAME = 'DOCTOR_NAME',
+}

@@ -1,0 +1,17 @@
+export const OrderConfirmInvoiceTranslation = [
+  'invoice_text',
+  'invoice_date_text',
+  'order_number_text',
+  'order_date_text',
+  'product_text',
+  'price_text',
+  'quantity_text',
+  'size_text',
+  'sub_total_text',
+  'discount_text',
+  'total_text',
+  'dispatch_text',
+  'coins_text',
+  'tax_text',
+  'shipping_charges_text',
+];

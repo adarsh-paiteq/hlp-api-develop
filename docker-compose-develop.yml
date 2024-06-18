@@ -1,0 +1,31 @@
+version: '3'
+services:
+  redis:
+    image: redis:7.2
+    container_name: redis
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - redis_data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+  api:
+    image: ghcr.io/paiteq/hlp-api:develop
+    container_name: hlp-api
+    ports:
+      - '3000:3000'
+      - '3001:3001'
+    restart: always
+    command:
+      - /bin/bash
+      - -c
+      - npm run start:prod
+    deploy:
+      mode: replicated
+      replicas: 1
+    depends_on:
+      - redis
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    environment:
+      - DOPPLER_TOKEN=${DOPPLER_TOKEN}
+volumes:
+  redis_data:

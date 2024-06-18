@@ -1,0 +1,540 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="
+min-width: 100%;
+margin: 0;
+padding: 0;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+background-color: #d8dde4;
+width: 100% !important;
+">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+<!--[if !mso]><!-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+rel="stylesheet" />
+<!--<![endif]-->
+<title></title>
+<style>
+body {
+font-family: "Poppins", sans-serif;
+}
+
+.invoice-box {
+max-width: 600px;
+margin: auto;
+padding: 10px 50px;
+border: 1px solid #eee;
+background-color: white;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+font-size: 16px;
+line-height: 24px;
+font-family: "Poppins", sans-serif;
+color: #555;
+}
+
+.invoice-box table {
+width: 100%;
+line-height: inherit;
+text-align: left;
+}
+
+.invoice-box table td {
+padding: 5px;
+vertical-align: top;
+}
+
+.invoice-box table tr td:nth-child(2) {
+text-align: right;
+}
+
+.invoice-box table tr.top table td {
+padding-bottom: 20px;
+}
+
+.invoice-box table tr.top table td.title {
+font-size: 45px;
+line-height: 45px;
+color: #333;
+}
+
+.invoice-box table tr.information table td {
+padding-bottom: 40px;
+}
+
+.invoice-box table tr.heading td {
+background: #eee;
+border-bottom: 1px solid #ddd;
+font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+border-top: 2px solid #eee;
+}
+
+.invoice-box table tr.item.last td {
+border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+border-top: 2px solid #eee;
+font-weight: bold;
+}
+.invoice-box.rtl {
+direction: rtl;
+font-family: "Poppins", sans-serif;
+}
+
+.invoice-box.rtl table {
+text-align: right;
+}
+
+.invoice-box.rtl table tr td:nth-child(2) {
+text-align: left;
+}
+
+.table-price {
+color: #595959;
+font-size: 18px;
+vertical-align: middle;
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+font-weight: 500;
+}
+
+.table-col {
+color: #595959;
+font-weight: 600;
+font-size: 18px;
+vertical-align: middle;
+padding: 5px;
+}
+
+.poppins-thin {
+font-family: "Poppins", sans-serif;
+font-weight: 100;
+font-style: normal;
+}
+
+.poppins-extralight {
+font-family: "Poppins", sans-serif;
+font-weight: 200;
+font-style: normal;
+}
+
+.poppins-light {
+font-family: "Poppins", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+.poppins-regular {
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+font-style: normal;
+}
+
+.poppins-medium {
+font-family: "Poppins", sans-serif;
+font-weight: 500;
+font-style: normal;
+}
+
+.poppins-semibold {
+font-family: "Poppins", sans-serif;
+font-weight: 600;
+font-style: normal;
+}
+
+.poppins-bold {
+font-family: "Poppins", sans-serif;
+font-weight: 700;
+font-style: normal;
+}
+
+.poppins-extrabold {
+font-family: "Poppins", sans-serif;
+font-weight: 800;
+font-style: normal;
+}
+
+.poppins-black {
+font-family: "Poppins", sans-serif;
+font-weight: 900;
+font-style: normal;
+}
+
+.poppins-thin-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 100;
+font-style: italic;
+}
+
+.poppins-extralight-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 200;
+font-style: italic;
+}
+
+.poppins-light-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 300;
+font-style: italic;
+}
+
+.poppins-regular-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 400;
+font-style: italic;
+}
+
+.poppins-medium-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 500;
+font-style: italic;
+}
+
+.poppins-semibold-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 600;
+font-style: italic;
+}
+
+.poppins-bold-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 700;
+font-style: italic;
+}
+
+.poppins-extrabold-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 800;
+font-style: italic;
+}
+
+.poppins-black-italic {
+font-family: "Poppins", sans-serif;
+font-weight: 900;
+font-style: italic;
+}
+</style>
+</head>
+
+<body>
+<div class="invoice-box">
+<table cellpadding="0" cellspacing="0">
+<tr class="center">
+<td colspan="2" style="text-align: center">
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/6ZRJVvW/Group-22732.png" alt="Group-22732"
+border="0" /></a>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: center">
+<p style="margin: 0 0 4px; font-weight: 600; color: #383d42; text-align: center">
+{{p1}}
+</p>
+<h1 style="
+font-size: 35px;
+line-height: 100%;
+margin: 0;
+text-align: center;
+color: #383d42;
+font-weight: 500;
+">
+{{h1}}
+</h1>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align: start">
+<h1 style="
+font-size: 18px;
+padding-top: 35px;
+line-height: 100%;
+margin: 0;
+color: #383d42;
+font-weight: 600;
+">
+{{hi}} {{first_name}} {{last_name}},
+</h1>
+<p style=" font-weight: 400; margin: 0 0 4px; padding: 15px 0 5px 0; color: #595959">
+{{p2}}
+</p>
+</td>
+</tr>
+
+<tr class="top">
+<td colspan="2">
+<table>
+<tr class="item">
+<td style="padding-top: 30px; padding-bottom: 20px">
+<h6 style="margin: 0; font-size: 18px; color: #383d42;font-weight: 600;">
+{{h6}} :
+<span style=" font-weight: 400; color: #595959">#{{orderId}}</span>
+</h6>
+</td>
+
+<td style="padding-top: 30px; padding-bottom: 20px">
+<h6 style="margin: 0; font-size: 18px; color: #383d42; font-weight: 600;">
+{{date}} :
+<span style=" font-weight: 400; color: #595959">{{orderDate}}</span>
+</h6>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+<tr class="information">
+<td colspan="2">
+<table>
+<tr class="item">
+<td style="width: 50%; padding-top: 20px; padding-bottom: 10px">
+<h6 style="
+margin: 0;
+font-size: 18px;
+color: #383d42;
+margin-bottom: 5px;
+font-weight: 600;
+">
+{{h5}} :
+</h6>
+<p  style="background: #d1f3e6;
+    color: #18c184;
+    padding: 2px 0px;
+    border-radius: 4px;
+    text-align: center;
+    width: 100px;">
+{{paid}}</p>
+<h6 style="
+margin-top: 15px;
+font-size: 18px;
+color: #383d42;
+margin-bottom: 5px;
+font-weight: 600;
+">
+{{h4}} :
+</h6>
+<p style="margin: 0; color: #595959; font-weight: 400;">
+{{payment_type}}
+</p>
+</td>
+
+<td style="width: 50%; padding-top: 20px; padding-bottom: 10px">
+<h6 style="
+margin: 0;
+font-size: 18px;
+color: #383d42;
+margin-bottom: 5px;
+text-align: start;
+font-weight: 600;
+">
+{{h3}} :
+</h6>
+<p style="margin: 0; color: #595959; text-align: start; font-weight: 400;">
+{{first_name}} {{middle_name}} {{last_name}}
+<br />
+{{postal_code}}, {{house_number}}, {{house_addition}}, {{street_address}}, {{hometown}}
+</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="information">
+<td colspan="3">
+<table>
+  {{#each shopItems}}
+<tr class="item">
+<td colspan="" style="
+padding-top: 30px;
+padding-bottom: 20px;
+vertical-align: middle;
+">
+<a href="https://imgbb.com/" class="logo"><img class="item-image" style="width:7rem;"
+src={{this.image_url}}
+alt="transaction-product-2-1-1" border="0"></a>
+</td>
+
+<td colspan="" style="
+padding-top: 30px;
+padding-bottom: 20px;
+vertical-align: middle;
+">
+
+<h6 style="
+font-size: 20px;
+font-weight: 600;
+text-align: start;
+margin: 0;
+color: #383d42;
+font-weight: 600;
+">
+{{this.title}}
+</h6>
+<h6 style="
+font-size: 16px;
+margin: 0;
+text-align: start;
+margin-top: 5px;
+color: #595959;
+font-weight: 400;
+">
+{{this.qty}}: {{this.item_quantity}} , {{this.price}}: €{{this.item_price}}
+</h6>
+</td>
+<td colspan="" style="
+padding-top: 30px;
+padding-bottom: 20px;
+vertical-align: middle;
+">
+<h6 style="
+text-align: right;
+margin: 0;
+color: #383d42;
+font-size: 20px;
+font-weight: 600;
+">
+€{{this.sub_total}}
+</h6>
+</td>
+</tr>
+{{/each}}
+</table>
+</td>
+</tr>
+<tr class="item">
+<td class="table-price" style="padding-top: 25px; padding-bottom: 16px; font-weight: 400">
+{{td1}}
+</td>
+
+<td class="table-col" style="
+text-align: right;
+padding-top: 25px;
+padding-bottom: 16px;
+color: #595959;
+">
+€{{sub_total}}
+</td>
+</tr>
+
+<tr>
+<td class="table-price" style="padding-bottom: 16px; font-weight: 400">
+{{td2}}
+</td>
+
+<td class="table-col" style="text-align: right; color: #fc5c65">
+-{{hlp_reward_points_redeemd}}
+</td>
+</tr>
+
+<tr>
+<td class="table-price" style="padding-bottom: 16px; font-weight: 400">
+{{td3}}<small style="font-size: 12px; color: #939393">({{tax_percentage}}% {{td4}})</small>
+</td>
+
+<td class="table-col" style="text-align: right; padding-bottom: 16px; color: #595959">
+€{{tax}}
+</td>
+</tr>
+<tr>
+<td class="table-price" style="padding-bottom: 25px; font-weight: 400">
+{{td5}}
+</td>
+
+<td class="table-col" style="text-align: right; padding-bottom: 16px; color: #595959">
+€{{shipping_charges}}
+</td>
+</tr>
+
+<tr class="item last">
+<td style="font-weight: 600; font-size: 22px; padding-top:1rem ;color: #383d42;">
+{{td6}} <small style="font-size: 12px; color:#939393; font-weight: 400;">({{tax_percentage}}% {{td4}})</small></td>
+
+<td class="table-col" style=" text-align: right; font-size: 22px;padding-top:1rem; ">
+€{{grand_total}}
+</td>
+</tr>
+
+
+<tr>
+        <td colspan="2" style="text-align: center; padding-top: 20px; ">
+          <button
+            style=" text-align: center; vertical-align: middle; background-color: #6048DE; width: 315px;  height: 55px; color: white; border: none; border-radius: 15px; cursor: pointer; font-size: 18px; padding-left: 41px; padding-right: 12px; font-weight: 600;">{{button}}
+            <img src="https://i.ibb.co/bNWwTMd/Circled-Left-Arrow.png" alt="Image"
+              style=" width: 24px; height: 24px; vertical-align: middle; float: inline-end;">
+ 
+          </button>
+        </td>
+      </tr>
+<tr>
+<td colspan="2" style="text-align: start">
+<h1 style="
+font-size: 18px;
+padding-top: 35px;
+line-height: 100%;
+margin: 0;
+color: #383d42;
+font-weight: 600;
+">
+{{h7}}
+</h1>
+<p style=" font-weight: 400; margin: 0 0 4px; padding: 9px 0 5px 0; color: #595959">
+{{p4}}
+</p>
+</td>
+</tr>
+
+<tr class="item">
+<td colspan="2" style="text-align: center" class="table-price" style="padding-top: 25px; padding-bottom: 16px;">
+
+<p style=" font-weight: 400; padding: 1rem 0; text-align: start; font-size: 16px; color: #595959; ">
+{{supportDescription}} <a
+style="color: #6048DE;text-decoration:underline">support@superbrains.nl</a>
+</p>
+</td>
+
+</tr>
+<tr class="item">
+<td colspan="2" style="text-align: center" class="table-price" style="padding-top: 25px; padding-bottom: 16px;">
+
+<p style="text-align:center; font-size: 14px; padding: 1rem 0;">
+{{footer_text}} <br />
+Beetsstraat 5 - 3261 PL - Oud-Beijerland - 010-254 00
+                      70
+</p>
+</td>
+
+</tr>
+<tr class="item">
+<td colspan="2" style="text-align: center; padding-top: 25px; padding-bottom: 16px;" class="table-price">
+<ul style="list-style-type: none; padding: 0; margin: 0;">
+<li
+style="display: inline; margin-right: 10px; font-size: 14px; font-weight: 400; text-decoration:underline;color: #939393;">
+{{privacy}}</li>
+<li
+style="display: inline; margin-right: 10px; font-size: 14px; font-weight: 400; text-decoration:underline;color: #939393;">
+{{account}}</li>
+<li
+style="display: inline; margin-right: 10px; font-size: 14px; font-weight: 400; text-decoration:underline;color: #939393;">
+{{unsubscribe}}</li>
+</ul>
+</td>
+</tr>
+
+</body>
+
+</html>

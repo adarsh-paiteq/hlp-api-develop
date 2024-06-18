@@ -1,0 +1,9 @@
+node_modules
+.env
+.git
+.vscode
+dist
+.github
+.husky
+.gitlab-ci.yml
+example.env

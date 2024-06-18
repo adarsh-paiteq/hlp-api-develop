@@ -1,0 +1,222 @@
+image: docker:19.03.8
+
+before_script:
+  - echo AWS_ACCESS_KEY=${AWS_ACCESS_KEY} >> .env
+  - echo AWS_SECRET=${AWS_SECRET} >> .env
+  - echo AWS_REGION=${AWS_REGION} >> .env
+  - echo AWS_SES_VERIFIED_EMAIL=${AWS_SES_VERIFIED_EMAIL} >> .env
+
+  - echo CURRENCY=${CURRENCY} >> .env
+
+  - echo IMAGEKIT_BASE_URL=${IMAGEKIT_BASE_URL_DEV} >> .env
+
+  - echo PUK_KEY=${PUK_KEY} >> .env
+  - echo PUK_API_URL=${PUK_API_URL} >> .env
+
+  - echo STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY} >> .env
+
+  - echo TEST_USER_EMAIL=${TEST_USER_EMAIL} >> .env
+
+  - echo THROTTLE_TTL=${THROTTLE_TTL} >> .env
+  - echo THROTTLE_LIMIT=${THROTTLE_LIMIT} >> .env
+  - echo PUK_TEST_ID=${PUK_TEST_ID} >> .env
+
+stages:
+  - lint
+  - build
+  - deploy
+
+eslint:
+  stage: lint
+  image: node:16
+  script:
+    - |
+      npm install eslint \
+      eslint-config-prettier \
+      eslint-import-resolver-typescript \
+      eslint-plugin-import \
+      eslint-plugin-node \
+      eslint-plugin-prettier
+
+    - node_modules/eslint/bin/eslint.js .
+  only:
+    - test
+
+build_develop:
+  stage: build
+  services:
+    - docker:19.03.8-dind
+  script:
+    - echo API_TOKEN=${API_TOKEN_DEV} >> .env
+    - echo AWS_S3_BUCKET=${AWS_S3_BUCKET_DEV} >> .env
+    - echo APP_PACKAGE_NAME=${APP_PACKAGE_NAME_DEV} >> .env
+
+    - echo FIREBASE_WEB_API_KEY=${FIREBASE_WEB_API_KEY_DEV} >> .env
+    - echo FIREBASE_DOMAIN_URI_PREFIX=${FIREBASE_DOMAIN_URI_PREFIX_DEV} >> .env
+
+    - echo IMAGEKIT_BASE_URL=${IMAGEKIT_BASE_URL_DEV} >> .env
+
+    - echo HASURA_URL=${HASURA_URL_DEV} >> .env
+    - echo HASURA_ADMIN_SECRET=${HASURA_ADMIN_SECRET_DEV} >> .env
+    - echo JWT_SECRET=${JWT_SECRET_DEV} >> .env
+
+    - echo NODE_ENV=${NODE_ENV_DEV} >> .env
+
+    - echo ONESIGNAL_APP_KEY=${ONESIGNAL_APP_KEY_DEV} >> .env
+    - echo ONESIGNAL_APP_ID=${ONESIGNAL_APP_ID_DEV} >> .env
+    - echo ONESIGNAL_ANDROID__NOTIFICATION_CHANNELS=${ONESIGNAL_ANDROID__NOTIFICATION_CHANNELS} >> .env
+
+    - echo POSTGRES_URL=${POSTGRES_URL_DEV} >> .env
+    - echo PUK_TEST_ID=${PUK_TEST_ID} >> .env
+
+    - echo REDIS_HOST=${REDIS_HOST_DEV} >> .env
+    - echo REDIS_PASSWORD=${REDIS_PASSWORD_DEV} >> .env
+    - echo REDIS_PORT=${REDIS_PORT_DEV} >> .env
+
+    - echo STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET_DEV} >> .env
+    - echo SENTRY_DSN=${SENTRY_DSN} >> .env
+    - echo WEB_URL=${WEB_URL} >> .env
+    - echo -n $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE:develop || true
+    - docker build --tag $CI_REGISTRY_IMAGE:develop .
+    - docker push $CI_REGISTRY_IMAGE:develop
+  only:
+    - develop
+
+build_staging:
+  stage: build
+  services:
+    - docker:19.03.8-dind
+  script:
+    - echo API_TOKEN=${API_TOKEN_TESTING} >> .env
+    - echo AWS_S3_BUCKET=${AWS_S3_BUCKET_TESTING} >> .env
+    - echo APP_PACKAGE_NAME=${APP_PACKAGE_NAME_TESTING} >> .env
+
+    - echo FIREBASE_WEB_API_KEY=${FIREBASE_WEB_API_KEY_TESTING} >> .env
+    - echo FIREBASE_DOMAIN_URI_PREFIX=${FIREBASE_DOMAIN_URI_PREFIX_TESTING} >> .env
+
+    - echo IMAGEKIT_BASE_URL=${IMAGEKIT_BASE_URL_TESTING} >> .env
+
+    - echo HASURA_URL=${HASURA_URL_TESTING} >> .env
+    - echo HASURA_ADMIN_SECRET=${HASURA_ADMIN_SECRET_TESTING} >> .env
+    - echo JWT_SECRET=${JWT_SECRET_TESTING} >> .env
+
+    - echo ONESIGNAL_APP_KEY=${ONESIGNAL_APP_KEY_TESTING} >> .env
+    - echo ONESIGNAL_APP_ID=${ONESIGNAL_APP_ID_TESTING} >> .env
+    - echo ONESIGNAL_ANDROID__NOTIFICATION_CHANNELS=${ONESIGNAL_ANDROID__NOTIFICATION_CHANNELS} >> .env
+
+    - echo NODE_ENV=${NODE_ENV_TESTING} >> .env
+
+    - echo POSTGRES_URL=${POSTGRES_URL_TESTING} >> .env
+    - echo PUK_TEST_ID=${PUK_TEST_ID} >> .env
+
+    - echo REDIS_HOST=${REDIS_HOST_TESTING} >> .env
+    - echo REDIS_PASSWORD=${REDIS_PASSWORD_TESTING} >> .env
+    - echo REDIS_PORT=${REDIS_PORT_TESTING} >> .env
+
+    - echo STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET_TESTING} >> .env
+    - echo SENTRY_DSN=${SENTRY_DSN} >> .env
+    - echo WEB_URL=${WEB_URL} >> .env
+
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE:staging || true
+    - docker build --tag $CI_REGISTRY_IMAGE:staging .
+    - docker push $CI_REGISTRY_IMAGE:staging
+  only:
+    - testing
+
+build_prod:
+  stage: build
+  services:
+    - docker:19.03.8-dind
+  script:
+    - echo API_TOKEN=${API_TOKEN_TESTING} >> .env
+    - echo AWS_S3_BUCKET=${AWS_S3_BUCKET_TESTING} >> .env
+    - echo APP_PACKAGE_NAME=${APP_PACKAGE_NAME_PROD} >> .env
+
+    - echo FIREBASE_WEB_API_KEY=${FIREBASE_WEB_API_KEY_PROD} >> .env
+    - echo FIREBASE_DOMAIN_URI_PREFIX=${FIREBASE_DOMAIN_URI_PREFIX_PROD} >> .env
+
+    - echo IMAGEKIT_BASE_URL=${IMAGEKIT_BASE_URL_TESTING} >> .env
+
+    - echo HASURA_URL=${HASURA_URL_TESTING} >> .env
+    - echo HASURA_ADMIN_SECRET=${HASURA_ADMIN_SECRET_TESTING} >> .env
+    - echo JWT_SECRET=${JWT_SECRET_TESTING} >> .env
+
+    - echo ONESIGNAL_APP_KEY=${ONESIGNAL_APP_KEY_PROD} >> .env
+    - echo ONESIGNAL_APP_ID=${ONESIGNAL_APP_ID_PROD} >> .env
+    - echo ONESIGNAL_ANDROID__NOTIFICATION_CHANNELS=${ONESIGNAL_ANDROID__NOTIFICATION_CHANNELS} >> .env
+
+    - echo NODE_ENV=${NODE_ENV_PROD} >> .env
+
+    - echo POSTGRES_URL=${POSTGRES_URL_PROD} >> .env
+    - echo PUK_TEST_ID=${PUK_TEST_ID} >> .env
+
+    - echo REDIS_HOST=${REDIS_HOST_PROD} >> .env
+    - echo REDIS_PASSWORD=${REDIS_PASSWORD_PROD} >> .env
+    - echo REDIS_PORT=${REDIS_PORT_PROD} >> .env
+    - echo SENTRY_DSN=${SENTRY_DSN} >> .env
+    - echo WEB_URL=${WEB_URL} >> .env
+
+    - echo STRIPE_WEBHOOK_SECRET=${STRIPE_WEBHOOK_SECRET_TESTING} >> .env
+
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE:prod || true
+    - docker build --tag $CI_REGISTRY_IMAGE:prod .
+    - docker push $CI_REGISTRY_IMAGE:prod
+  only:
+    - production
+
+deploy_develop:
+  stage: deploy
+  image: alpine
+  environment: development
+  script:
+    - apk update
+    - apk add --update --no-cache openssh sshpass
+    - mkdir hlp-dev-api
+    - chmod +x hlp-dev-api
+    - cp docker-compose-development.yml hlp-dev-api/docker-compose.yml
+    - echo $SERVER_SSH_KEY_DEV | base64 -d > my_ssh
+    - chmod 400 my_ssh
+    - sshpass scp -i my_ssh -o stricthostkeychecking=no -r hlp-dev-api ${SERVER_USERNAME}@${SERVER_IP_DEV}:~/
+    - sshpass ssh -i my_ssh -o StrictHostKeyChecking=no ${SERVER_USERNAME}@${SERVER_IP_DEV} "cd ~/hlp-dev-api; sudo docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; sudo docker-compose down; sudo docker image rm ${CI_REGISTRY_IMAGE}:develop; sudo docker-compose up -d;"
+  only:
+    - develop
+
+deploy_staging:
+  stage: deploy
+  image: alpine
+  environment: staging
+  script:
+    - apk update
+    - apk add --update --no-cache openssh sshpass
+    - mkdir hlp-stg-api
+    - chmod +x hlp-stg-api
+    - cp docker-compose-stg.yml hlp-stg-api/docker-compose.yml
+    - echo $SERVER_SSH_KEY_TESTING | base64 -d > my_ssh
+    - chmod 400 my_ssh
+    - sshpass scp -i my_ssh -o stricthostkeychecking=no -r hlp-stg-api ubuntu@${SERVER_IP_TESTING}:~/
+    - sshpass ssh -i my_ssh -o StrictHostKeyChecking=no ubuntu@${SERVER_IP_TESTING} "cd ~/hlp-stg-api; sudo docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; sudo docker-compose down; sudo docker image rm ${CI_REGISTRY_IMAGE}:staging; sudo docker-compose up -d;"
+  only:
+    - testing
+
+deploy_prod:
+  stage: deploy
+  image: alpine
+  environment: production
+  script:
+    - apk update
+    - apk add --update --no-cache openssh sshpass
+    - mkdir hlp-prod-api
+    - chmod +x hlp-prod-api
+    - cp docker-compose-prod.yml hlp-prod-api/docker-compose.yml
+    - echo $SERVER_SSH_KEY_TESTING | base64 -d > my_ssh
+    - chmod 400 my_ssh
+    - sshpass scp -i my_ssh -o stricthostkeychecking=no -r hlp-prod-api ubuntu@${SERVER_IP_PROD_1}:~/
+    - sshpass ssh -i my_ssh -o StrictHostKeyChecking=no ubuntu@${SERVER_IP_PROD_1} "cd ~/hlp-prod-api; sudo docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; sudo docker-compose down; sudo docker image rm ${CI_REGISTRY_IMAGE}:prod; sudo docker-compose up -d;"
+    - sleep 30
+    - sshpass scp -i my_ssh -o stricthostkeychecking=no -r hlp-prod-api ubuntu@${SERVER_IP_PROD_2}:~/
+    - sshpass ssh -i my_ssh -o StrictHostKeyChecking=no ubuntu@${SERVER_IP_PROD_2} "cd ~/hlp-prod-api; sudo docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD} ${CI_REGISTRY}; sudo docker-compose down; sudo docker image rm ${CI_REGISTRY_IMAGE}:prod; sudo docker-compose up -d;"
+  only:
+    - production

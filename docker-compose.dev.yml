@@ -1,0 +1,25 @@
+version: '3'
+services:
+  redis:
+    image: redis:7.2
+    container_name: hlp-redis
+    command: redis-server /usr/local/etc/redis/redis.conf
+    volumes:
+      - redis_data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+  dev:
+    build:
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/hlp/api
+      - /home/hlp/api/node_modules
+    depends_on:
+      - redis
+    environment:
+      - DOPPLER_TOKEN=${ENV_TOKEN}
+volumes:
+  redis_data:
