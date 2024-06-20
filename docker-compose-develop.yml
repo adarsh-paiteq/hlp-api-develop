@@ -8,7 +8,7 @@ services:
       - redis_data:/data
       - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
   api:
-    image: ghcr.io/paiteq/hlp-api:develop
+    image: ghcr.io/adarsh-paiteq/hlp-api-develop:develop
     container_name: hlp-api
     ports:
       - '3000:3000'
@@ -25,7 +25,5 @@ services:
       - redis
     extra_hosts:
       - 'host.docker.internal:host-gateway'
-    environment:
-      - DOPPLER_TOKEN=${DOPPLER_TOKEN}
 volumes:
   redis_data:
