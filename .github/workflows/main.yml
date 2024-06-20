@@ -55,6 +55,5 @@ jobs:
               export username=${{ github.actor }}
               export CR_PAT=${{ secrets.TOKEN }}
               docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.TOKEN }} 
-              docker-compose down
               docker image rm ghcr.io/-adarsh-paiteq/hlp-api-develop:develop
               docker-compose up -d
