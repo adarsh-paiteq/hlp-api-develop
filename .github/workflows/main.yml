@@ -25,3 +25,36 @@ jobs:
           echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
           docker build --tag ghcr.io/${GITHUB_REPOSITORY}:develop .
           docker push ghcr.io/${GITHUB_REPOSITORY}:develop
+  deploy_1:
+      needs: build
+      runs-on: ubuntu-latest
+      environment: Development
+      steps:
+        - uses: actions/checkout@v3
+        - name: SCP and copy code to server
+          uses: appleboy/scp-action@v0.1.4
+          with:
+            host: ${{ secrets.HOST_LIVE_ }}
+            username: 'ubuntu'
+            key: ${{ secrets.SERVER_SSH_KEY_ }}
+            port: 22
+            source: 'docker-compose-develop.yml'
+            target: '~/hlp-api'
+        - name: SSH and deploy node app
+          uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST_LIVE_ }}
+            username: 'ubuntu'
+            key: ${{ secrets.SERVER_SSH_KEY_ }}
+            port: 22
+            script: |
+              cd ~/hlp-api
+              cp docker-compose-develop.yml docker-compose.yml
+              rm docker-compose-develop.yml
+              export password=${{ secrets.TOKEN }}
+              export username=${{ github.actor }}
+              export CR_PAT=${{ secrets.TOKEN }}
+              docker login ghcr.io -u ${{ github.actor }} -p ${{ secrets.TOKEN }} 
+              docker-compose down
+              docker image rm ghcr.io/-adarsh-paiteq/hlp-api-develop:develop
+              docker-compose up -d
