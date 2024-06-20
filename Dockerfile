@@ -1,4 +1,4 @@
-FROM node18.17.1
+FROM node:18.17.1-alpine
 RUN apk add --no-cache ffmpeg
 WORKDIR /app
 ADD . /app
