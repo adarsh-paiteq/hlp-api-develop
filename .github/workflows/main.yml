@@ -28,7 +28,7 @@ jobs:
   deploy_1:
       needs: build
       runs-on: ubuntu-latest
-      environment: Development
+      environment: development
       steps:
         - uses: actions/checkout@v3
         - name: SCP and copy code to server
