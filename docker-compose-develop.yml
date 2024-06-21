@@ -25,5 +25,8 @@ services:
       - redis
     extra_hosts:
       - 'host.docker.internal:host-gateway'
+    environment:
+      - NODE_EN=development
+      - PORT=3000
 volumes:
   redis_data:
