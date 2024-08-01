@@ -1,0 +1,22 @@
+# This is a sample deployment manifest file for a simple web application.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hlp-api-develop
+  labels:
+    app: hlp-api-develop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hlp-api-develop
+  template:
+    metadata:
+      labels:
+        app: hlp-api-develop
+    spec:
+      containers:
+      - name: hlp-api-develop
+        image: ghcr.io/adarsh-paiteq/hlp-api-develop:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 3000
